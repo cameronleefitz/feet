@@ -9,8 +9,14 @@ export default function Slider() {
 		setSliderValue(e.target.value);
 	};
 	const handleClick = (e) => {
-		console.log(e);
-		// fetch images from db
+		fetch('/api/getImage')
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				console.log('data', data[sliderValue].image);
+			})
+			.catch((err) => console.log('Fetching error.'));
 	};
 	return (
 		<div>

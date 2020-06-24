@@ -7,7 +7,7 @@ const { route } = require('./server');
 
 const router = express.Router();
 
-router.get('/', feetController.getFeet, (req, res) => res.status(200).json(res.locals.feet));
+router.get('/getImage', feetController.getFeet, (req, res) => res.status(200).json(res.locals.feet));
 
 // router.get('/species', starWarsController.getSpecies, (req, res) => res.status(200).json(res.locals.details));
 
