@@ -1,0 +1,44 @@
+// {
+// 	"name": "",
+// 	"version": "1.0.0",
+// 	"description": "",
+// 	"main": "index.js",
+// 	"scripts": {
+// 		"start": "nodemon server/server.js",
+// 		"build": "webpack",
+// 		"dev": "nodemon server/server.js & webpack-dev-server --open",
+// 		"gulp-prod": "node_modules/.bin/gulp prod",
+// 		"gulp-dev": "node_modules/.bin/gulp dev"
+// 	},
+// 	"nodemonConfig": {
+// 		"ignore": [ "build", "client" ]
+// 	},
+// 	"author": "CodesmithLLC https://github.com/CodesmithLLC <hello@codesmith.io>",
+// 	"license": "ISC",
+// 	"dependencies": {
+// 		"@material-ui/core": "^4.10.2",
+// 		"browserify": "^10.2.4",
+// 		"express": "^4.12.3",
+// 		"gulp": "^3.9.0",
+// 		"prop-types": "^15.6.1",
+// 		"react": "^16.13.1",
+// 		"react-dom": "^16.13.1"
+// 	},
+// 	"devDependencies": {
+// 		"@babel/core": "^7.10.3",
+// 		"@babel/preset-env": "^7.10.3",
+// 		"@babel/preset-react": "^7.10.1",
+// 		"babel-loader": "^8.1.0",
+// 		"concurrently": "^4.1.0",
+// 		"cross-env": "^5.2.0",
+// 		"css-loader": "^3.6.0",
+// 		"isomorphic-fetch": "^2.2.1",
+// 		"nodemon": "^1.18.9",
+// 		"sass": "^1.26.8",
+// 		"sass-loader": "^8.0.2",
+// 		"style-loader": "^1.2.1",
+// 		"webpack": "^4.43.0",
+// 		"webpack-cli": "^3.3.12",
+// 		"webpack-dev-server": "^3.11.0"
+// 	}
+// }

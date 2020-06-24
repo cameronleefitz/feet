@@ -1,5 +1,7 @@
 /* eslint-disable function-paren-newline */
 const express = require('express');
+const feetController = require('./controllers/feetController');
+const { route } = require('./server');
 
 // const starWarsController = require('../controllers/starWarsController');
 

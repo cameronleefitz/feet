@@ -16,7 +16,7 @@ starWarsController.getFeet = (req, res, next) => {
 		.query(sqlQuery)
 		.then((data) => {
 			console.log(data);
-			// res.locals.images = data.rows;
+			res.locals.feet = data.rows;
 			return next();
 		})
 		.catch((err) => {

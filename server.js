@@ -13,6 +13,7 @@ const PORT = 3000;
  */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.json());
 
 /**
  * define route handlers
@@ -25,12 +26,12 @@ app.use('/api', apiRouter);
 
 app.use('/build', express.static(path.join(__dirname, './build')));
 // serve index.html on the route '/'
-app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, './client/index.html'));
-});
+// app.get('*', (req, res) => {
+// 	res.sendFile(path.join(__dirname, './client/index.html'));
+// });
 
 // respond with main app
-app.get('/', (req, res) => res.status(200).send('HELLO!!!'));
+app.get('/', (req, res) => res.status(200));
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.sendStatus(404));
