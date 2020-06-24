@@ -1,27 +1,48 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 // import Typography from '@material-ui/core/Typography';
 
-export default function Slider() {
-	const [ sliderValue, setSliderValue ] = useState(0);
+export default class Slider extends Component {
+	constructor() {
+		super();
+		this.state = { sliderValue: 1, url: '' };
 
-	const handleChange = (e) => {
+		this.handleChange = this.handleChange.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+		this.addImage = this.addImage.bind(this);
+	}
+
+	handleChange(e) {
 		console.log(e.target);
-		setSliderValue(e.target.value);
-	};
-	const handleClick = (e) => {
+		this.state.sliderValue = e.target.value;
+	}
+	handleClick(e) {
 		fetch('/api/getImage')
 			.then((res) => {
 				return res.json();
 			})
 			.then((data) => {
-				console.log('data', data[sliderValue].image);
+				console.log(this.state.sliderValue);
+				this.setState({ url: data[this.state.sliderValue - 1].image });
 			})
 			.catch((err) => console.log('Fetching error.'));
-	};
-	return (
-		<div>
-			<input type="range" defaultValue={sliderValue} onMouseUp={handleChange} step="1" min="1" max="5" />
-			<button onClick={handleClick}> SHOW ME THE FEET</button>
-		</div>
-	);
+	}
+	addImage() {
+		return <img src={this.state.url} />;
+	}
+	render() {
+		return (
+			<div>
+				<input
+					type="range"
+					defaultValue={this.state.sliderValue}
+					onMouseUp={this.handleChange}
+					step="1"
+					min="1"
+					max="5"
+				/>
+				<button onClick={this.handleClick}> SHOW ME THE FEET</button>
+				{this.addImage()}
+			</div>
+		);
+	}
 }
